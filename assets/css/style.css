@@ -1,0 +1,202 @@
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 1.6rem;
+    line-height: 1.8;
+}
+
+li {
+    list-style: none;
+}
+
+a,
+img,
+button {
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    height: auto;
+}
+
+button {
+    background: none;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+}
+
+.header.active .header-bottom {
+    position: fixed;
+    background-color: #000000;
+    top: 0;
+    width: 100%;
+    left: 0;
+    padding-block: 12px;
+    z-index: 2;
+}
+
+.header.active .header-bottom .navbar img {
+    display: block;
+}
+
+.header.active .header-bottom .navbar .collapse {
+    justify-content: end;
+}
+
+.header .header-top {
+    padding-block: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .header-top-number {
+    font-weight: 700;
+}
+
+.header .header-bottom {
+    background-color: #000000;
+    padding-block: 12px;
+}
+
+.navbar img {
+    display: block;
+}
+
+.navbar .navbar-toggler {
+    background-color: #fe6f61;
+    color: #ffffff;
+    font-size: 1.6rem;
+}
+
+.navbar .collapse {
+    justify-content: start;
+    padding-block-start: 40px;
+}
+
+.navbar .nav-link {
+    border-bottom: 2px solid transparent;
+    color: #ffffff;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.navbar .nav-link:is(:hover, :focus-visible) {
+    border-bottom: 2px solid #fe6f61;
+    color: #fe6f61;
+}
+
+.hero {
+    background-color: #fe6f61;
+    padding-block: 50px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.content {
+    padding-block-start: 50px;
+}
+
+.content .section-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.content .section-text h2 {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.content .section-text p {
+    font-size: 1.4rem;
+}
+
+.gallery {
+    padding-block: 20px 50px;
+}
+
+.gallery .col-lg-6 h3 {
+    font-size: 2rem;
+    font-weight: 400;
+    padding-block-end: 24px;
+}
+
+.gallery .col-lg-6:is(:hover, :focus-within) {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.gallery .gallery-btn {
+    padding-block-start: 46px;
+    text-align: center;
+}
+
+.gallery .gallery-btn .download-btn {
+    background-color: #45cbcb;
+    color: #ffffff;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-inline: 18px;
+    padding-block: 8px;
+}
+
+.gallery .gallery-btn .download-btn:is(:hover, :focus-visible) {
+    background-color: #fe6f61;
+}
+
+.footer {
+    background-color: #000000;
+    padding-block: 20px;
+    color: #ffffff;
+    padding-block: 24px;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.footer .footer-content {
+    display: block;
+    text-align: center;
+
+}
+
+@media (min-width: 992px) {
+    .navbar img {
+        display: none;
+    }
+
+    .navbar .collapse {
+        padding-block-start: 0;
+    }
+
+    .footer .footer-content {
+        display: flex;
+        justify-content: space-between;
+    }
+}
