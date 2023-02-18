@@ -141,15 +141,21 @@ button {
     padding-block: 20px 50px;
 }
 
-.gallery .col-lg-6 h3 {
-    font-size: 2rem;
-    font-weight: 400;
-    padding-block-end: 24px;
+.gallery .col-lg-6 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .gallery .col-lg-6:is(:hover, :focus-within) {
     transform: scale(1.05);
     cursor: pointer;
+}
+
+.gallery .col-lg-6 h3 {
+    font-size: 2rem;
+    font-weight: 400;
+    padding-block-end: 24px;
 }
 
 .gallery .gallery-btn {
