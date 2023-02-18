@@ -9,15 +9,15 @@
     <!-- 
         - Primary meta tags
     -->
-    <title>Go Crayons - 1</title>
+    <title>Barbers</title>
     <meta name="title" content="Barbers">
-    <meta name="description" content="This Website is designed by Lawrence Sebelina">
+    <meta name="description" content="This BARBERS Website is designed by Lawrence Sebelina">
     <meta name="author" content="Lawrence Sebelina">
 
     <!-- 
         - Favicon
     -->
-    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/svg+xml">
 
     <!-- 
         - Google font link
@@ -28,30 +28,51 @@
         href="https://fonts.googleapis.com/css2?family=Noto+Serif+Gujarati:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
-
     <!-- 
         Bootstrap CSS Link
     -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
+    <!-- 
+        Swiper CSS Link
+    -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+    <!-- 
+        Animate On Scroll CSS Link
+    -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <!--  
         Custom CSS 
     -->
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- 
+        - Preload images
+    -->
+    <link rel="preload" as="image" href="assets/images/favicon.svg">
 </head>
 
 <body>
-    <header class="header active">
+    <div class="preloader" data-preloader>
+        <div class="circle"></div>
+        <img src="assets/images/favicon.svg" width="20" height="20" alt="" class="img">
+    </div>
+
+    <header class="header" data-header>
         <div class="container">
-            <div class="header-top">
-                <div class="header-top-logo">
-                    <a href="#" class="logo">
-                        <img src="assets/images/gc-logo.png" width="110" height="38" alt="logo">
+            <div class="header-top clearfix">
+                <div class="header-top-email float-lg-start">
+                    <a href="mailto:youremail@gmail.com">
+                        <ion-icon name="mail"></ion-icon>
+                        youremail@gmail.com
                     </a>
                 </div>
-                <div class="header-top-number">
+                <div class="header-top-number float-lg-end">
                     <a href="tel:046123456">
+                        <ion-icon name="phone-portrait-outline"></ion-icon>
                         (046) 123 - 4567
                     </a>
                 </div>
@@ -60,95 +81,556 @@
 
         <div class="header-bottom">
             <div class="container">
-                <nav class="navbar navbar-expand-lg">
-                    <img src="assets/images/gc-logo.png" width="110" height="38" alt="logo">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <ion-icon name="menu-outline"></ion-icon>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                        <ul class="navbar-nav gap-5">
-                            <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">About Us</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Services</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Gallery</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Contact Us</a>
-                            </li>
-                        </ul>
+                <a href="#" class="logo">
+                    <img src="assets/images/logo.svg" width="187" height="38" alt="logo">
+                </a>
+
+                <nav class="navbar" data-navbar>
+                    <div class="navbar-top">
+                        <a href="#" class="logo">
+                            <img src="assets/images/logo.svg" width="187" height="38" alt="logo">
+                        </a>
+
+                        <button class="nav-toggle-btn" aria-label="close menu" data-nav-toggler>
+                            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+                        </button>
                     </div>
+
+                    <ul class="navbar-list" id="navbar-list">
+                        <li class="navbar-item">
+                            <a href="#home" class="navbar-link">
+                                Home
+                            </a>
+                        </li>
+
+                        <li class="navbar-item">
+                            <a href="#about-us" class="navbar-link">
+                                About Us
+                            </a>
+                        </li>
+
+                        <li class="navbar-item">
+                            <a href="#services" class="navbar-link">
+                                Services
+                            </a>
+                        </li>
+
+                        <li class="navbar-item">
+                            <a href="#testimonials" class="navbar-link">
+                                Testimonials
+                            </a>
+                        </li>
+
+                        <li class="navbar-item">
+                            <a href="#our-team" class="navbar-link">
+                                Our Team
+                            </a>
+                        </li>
+
+                        <li class="navbar-item">
+                            <a href="#contact-us" class="navbar-link">
+                                Contact Us
+                            </a>
+                        </li>
+                    </ul>
                 </nav>
+
+                <button class="nav-toggle-btn" aria-label="open menu" data-nav-toggler>
+                    <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+                </button>
             </div>
         </div>
     </header>
 
     <main>
         <article>
-            <section class="section hero">
-                <div class="container text-center">
-                    <h1>40 Best Simple Wordpress Themes You Should Try (2017)</h1>
+            <section class="section hero" aria-label="hero"
+                style="background-image: url('assets/images/background.jpg');" data-bs-spy="scroll"
+                data-bs-target="#navbar-list" data-bs-smooth-scroll="true" tabindex="0" id="home">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6" data-aos="fade-right" data-aos-offset="160" data-aos-duration="600">
+                            <h1 class="mb-0">
+                                Quality Barber Shop
+                            </h1>
+
+                            <p class="mb-0">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora similique inventore
+                                beatae
+                                vero ducimus impedit consequuntur ut, hic nemo? Consectetur.
+                            </p>
+
+                            <div class="buttons">
+                                <a href="#" class="btn btn-learn">
+                                    <span class="span">Learn More</span>
+                                </a>
+
+                                <a href="#" class="btn btn-contact">
+                                    <span class="span">Contact Us</span>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </section>
 
-            <section class="section content">
+            <section class="section about" data-bs-spy="scroll" data-bs-target="#navbar-list"
+                data-bs-smooth-scroll="true" tabindex="0" id="about-us">
                 <div class="container">
-                    <div class="section-text">
-                        <h2>Starting a WordPress Site with a Simple Theme</h2>
+                    <div class="row g-5">
+                        <div class="col-md-6 mt-0" data-aos="fade-right" data-aos-offset="160" data-aos-duration="600">
+                            <div class="about-title">
+                                <p class="mb-0">The Unique Story</p>
+                                <h2 class="mb-0">50 Years of Experience</h2>
+                            </div>
 
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit corporis perspiciatis ab earum
-                            molestiae nemo facere beatae dolorem. Placeat, facilis! Eum modi repellendus unde earum iste
-                            tempora aperiam commodi vitae!</p>
+                            <p class="mb-0">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi, eligendi id nostrum
+                                perferendis mollitia veniam distinctio beatae fuga doloremque minima tenetur esse
+                                nulla
+                                inventore nihil. Molestias, esse aperiam! Similique neque enim perspiciatis
+                                obcaecati id
+                            </p>
 
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam animi nam voluptatem nobis
-                            rem! Excepturi ullam, voluptates asperiores consectetur maxime et minus quae facilis dolores
-                            vitae atque quia praesentium itaque rerum, blanditiis iure id? Quia, voluptatem mollitia.
-                            Nemo laborum maiores commodi esse, possimus dolorem quasi quod aliquam itaque sint
-                            voluptatum, impedit non mollitia cumque aut necessitatibus ducimus minus! Consequatur
-                            accusantium mollitia eum fugiat a provident perspiciatis labore temporibus quod odit!</p>
+                            <p class="mb-0">
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam obcaecati
+                                voluptatibus explicabo tempora at dolorum quaerat sed officiis natus aperiam,
+                                doloremque
+                            </p>
+
+                            <a href="#" class="btn btn-about mb-5">
+                                <span class="span">Read More</span>
+                            </a>
+                        </div>
+
+                        <div class="col-md-6 mt-0" data-aos="flip-up" data-aos-offset="160" data-aos-duration="600">
+                            <figure class="about-banner">
+                                <img src="assets/images/about-img.jpg" width="631" height="735" alt="about banner"
+                                    class="w-100">
+                            </figure>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <section class="section gallery">
+            <section class="section services" data-bs-spy="scroll" data-bs-target="#navbar-list"
+                data-bs-smooth-scroll="true" tabindex="0" id="services">
                 <div class="container">
-                    <div class="row g-5 m-0">
-                        <div class="col-lg-6">
-                            <h3>1. Modern Portfolio Pro</h3>
-                            <img src="assets/images/portfolio-modern-pro.jpg" class="img-fluid">
-                        </div>
-                        <div class="col-lg-6">
-                            <h3>2. Camellia</h3>
-                            <img src="assets/images/portfolio-camellia.jpg" class="img-fluid">
-                        </div>
+                    <div class="services-title">
+                        <p class="mb-0">Nothing But The Best</p>
+                        <h2 class="mb-0">Our Services</h2>
                     </div>
 
-                    <div class="gallery-btn">
-                        <a class="btn download-btn" href="assets/images/portfolio-modern-pro.jpg" download>Download
-                            Now</a>
+                    <div class="row g-5">
+                        <div class="col-md-6 col-lg-4" data-aos="flip-left" data-aos-offset="160"
+                            data-aos-duration="600">
+                            <div class="services-card">
+                                <img src="assets/images/services-img-1.jpg" style="width: 100%;" alt="services">
+
+                                <div class="services-card-content">
+                                    <h2 class="mb-0">
+                                        Classic Haircut
+                                    </h2>
+                                    <p class="mb-0">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nobis
+                                        exercitationem iusto quia culpa. Eaque nostrum similique blanditiis consequuntur
+                                        ipsum.
+                                    </p>
+                                    <a href="#" class="btn btn-services">
+                                        <span class="span">Read More</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4" data-aos="flip-left" data-aos-offset="160"
+                            data-aos-duration="870">
+                            <div class="services-card">
+                                <img src="assets/images/services-img-2.jpg" style="width: 100%;" alt="services">
+
+                                <div class="services-card-content">
+                                    <h2 class="mb-0">
+                                        Classic Haircut
+                                    </h2>
+                                    <p class="mb-0">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nobis
+                                        exercitationem iusto quia culpa. Eaque nostrum similique blanditiis consequuntur
+                                        ipsum.
+                                    </p>
+                                    <a href="#" class="btn btn-services">
+                                        <span class="span">Read More</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4" data-aos="flip-left" data-aos-offset="160"
+                            data-aos-duration="800">
+                            <div class="services-card">
+                                <img src="assets/images/services-img-3.jpg" style="width: 100%;" alt="services">
+
+                                <div class="services-card-content">
+                                    <h2 class="mb-0">
+                                        Classic Haircut
+                                    </h2>
+                                    <p class="mb-0">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nobis
+                                        exercitationem iusto quia culpa. Eaque nostrum similique blanditiis consequuntur
+                                        ipsum.
+                                    </p>
+                                    <a href="#" class="btn btn-services">
+                                        <span class="span">Read More</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </section>
+
+            <section class="section testimonials" style="background-image: url('assets/images/testimonials-img.jpg');"
+                data-bs-spy="scroll" data-bs-target="#navbar-list" data-bs-smooth-scroll="true" tabindex="0"
+                id="testimonials">
+                <div class="container">
+                    <div class="row g-5">
+                        <div class="col-md-6 mt-0" data-aos="fade-right" data-aos-offset="160" data-aos-duration="600">
+                            <div class="swiper mySwiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="testimonials-title">
+                                            <p class="mb-0">1000+ Happy Clients</p>
+                                            <h2 class="mb-0">Testimonials</h2>
+                                        </div>
+
+                                        <p class="mb-0 testimonials-text">
+                                            "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi, eligendi id
+                                            nostrum
+                                            perferendis mollitia veniam distinctio beatae fuga doloremque minima tenetur
+                                            esse
+                                            nulla
+                                            inventore nihil. Molestias, esse aperiam! Similique neque enim perspiciatis
+                                            obcaecati id"
+                                        </p>
+
+                                        <div class="testimonials-user-details">
+                                            <h3>John Doe, CEO Microsoft</h3>
+                                            <p class="mb-0">
+                                                July 17, 2018
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="testimonials-title">
+                                            <p class="mb-0">1000+ Happy Clients</p>
+                                            <h2 class="mb-0">Testimonials</h2>
+                                        </div>
+
+                                        <p class="mb-0 testimonials-text">
+                                            "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi, eligendi id
+                                            nostrum
+                                            perferendis mollitia veniam distinctio beatae fuga doloremque minima tenetur
+                                            esse
+                                            nulla
+                                            inventore nihil. Molestias, esse aperiam! Similique neque enim perspiciatis
+                                            obcaecati id"
+                                        </p>
+
+                                        <div class="testimonials-user-details">
+                                            <h3>John Doe, CEO Microsoft</h3>
+                                            <p class="mb-0">
+                                                July 17, 2018
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="testimonials-title">
+                                            <p class="mb-0">1000+ Happy Clients</p>
+                                            <h2 class="mb-0">Testimonials</h2>
+                                        </div>
+
+                                        <p class="mb-0 testimonials-text">
+                                            "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi, eligendi id
+                                            nostrum
+                                            perferendis mollitia veniam distinctio beatae fuga doloremque minima tenetur
+                                            esse
+                                            nulla
+                                            inventore nihil. Molestias, esse aperiam! Similique neque enim perspiciatis
+                                            obcaecati id"
+                                        </p>
+
+                                        <div class="testimonials-user-details">
+                                            <h3>John Doe, CEO Microsoft</h3>
+                                            <p class="mb-0">
+                                                July 17, 2018
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section teams" data-bs-spy="scroll" data-bs-target="#navbar-list"
+                data-bs-smooth-scroll="true" tabindex="0" id="our-team">
+                <div class="container">
+                    <div class="teams-title">
+                        <p class="mb-0">Professional</p>
+                        <h2 class="mb-0">Our Team</h2>
+                    </div>
+
+                    <div class="row g-5">
+                        <div class="col-md-6 col-lg-4" data-aos="flip-right" data-aos-offset="160"
+                            data-aos-duration="600">
+                            <div class="teams-card">
+                                <img src="assets/images/teams-img-1.jpg" style="width: 100%;" alt="teams">
+
+                                <div class="teams-card-content">
+                                    <h2 class="mb-0">
+                                        Paul Narch
+                                    </h2>
+                                    <p class="mb-0">
+                                        Barber
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4" data-aos="flip-right" data-aos-offset="160"
+                            data-aos-duration="700">
+                            <div class="teams-card">
+                                <img src="assets/images/teams-img-2.jpg" style="width: 100%;" alt="teams">
+
+                                <div class="teams-card-content">
+                                    <h2 class="mb-0">
+                                        Steven Josephin
+                                    </h2>
+                                    <p class="mb-0">
+                                        Barber
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4" data-aos="flip-right" data-aos-offset="160"
+                            data-aos-duration="800">
+                            <div class="teams-card">
+                                <img src="assets/images/teams-img-3.jpg" style="width: 100%;" alt="teams">
+
+                                <div class="teams-card-content">
+                                    <h2 class="mb-0">
+                                        Alexander David
+                                    </h2>
+                                    <p class="mb-0">
+                                        Shaver
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section cta" style="background-image: url('assets/images/cta-img.jpg');">
+                <div class="container">
+                    <div class="cta-content" data-aos="fade-down" data-aos-offset="160" data-aos-duration="600">
+                        <h1 class="mb-0">GET FLAT 25% DISCOUNT!</h1>
+                        <p class="mb-0">Get Flat 25% Discount on every sunday of December. Use the promo code
+                            below.</p>
+
+                        <h2 class="mb-0">#BARBEARDS</h1>
+
+                            <a href="#" class="btn btn-cta">
+                                <span class="span">Make an Appointment Now</span>
+                            </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section contact-us" data-bs-spy="scroll" data-bs-target="#navbar-list"
+                data-bs-smooth-scroll="true" tabindex="0" id="contact-us">
+                <div class="container">
+                    <div class="contact-us-title">
+                        <p class="mb-0">Contact Us</p>
+                        <h2 class="mb-0">Make an Appointment</h2>
+                    </div>
+                    <div class="row g-5 contact-us-content">
+                        <div class="col-md-6 contact-content-left" data-aos="fade-up" data-aos-offset="160"
+                            data-aos-duration="600">
+                            <p class="mb-0 content-text-left">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Delectus adipisci
+                                recusandae nemo voluptas accusamus quas sunt dignissimos obcaecati quasi sequi qui cum,
+                                exercitationem nulla earum.</p>
+                            <div class="row g-5">
+                                <div class="col-md-6">
+                                    <h3 class="mb-0">Contact Information</h3>
+
+                                    <div class="contact-info"><ion-icon name="location"></ion-icon>
+                                        <p class="mb-0">123 Your Address
+                                            here</p>
+                                    </div>
+
+
+                                    <div class="contact-info"><ion-icon name="phone-portrait-outline"></ion-icon>
+                                        <p class="mb-0">(046) 123 - 456</p>
+                                    </div>
+
+
+                                    <div class="contact-info"><ion-icon name="mail"></ion-icon>
+                                        <p class="mb-0">youremail@gmail.com</p>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <h3 class="mb-0">
+                                        Working Hours
+                                    </h3>
+
+                                    <div class="clearfix">
+                                        <p class="mb-0 day-open">Monday to Friday</p>
+                                        <p class="mb-0 time-open">9 AM - 6 PM</p>
+                                    </div>
+
+                                    <div class="clearfix">
+                                        <p class="mb-0 day-open">Saturday</p>
+                                        <p class="mb-0 time-open">9 AM - 5 PM</p>
+                                    </div>
+
+                                    <div class="clearfix">
+                                        <p class="mb-0 day-open">Sunday</p>
+                                        <p class="mb-0 time-open">9 AM - 12 NN</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 contact-content-right" data-aos="fade-up" data-aos-offset="160"
+                            data-aos-duration="600">
+                            <p class="mb-0 content-text-right">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                                Eos ducimus
+                                explicabo tempore ullam veniam amet sapiente nemo in dolores tempora!</p>
+
+                            <form action="" method="post" class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="floatingInput" placeholder="Name"
+                                            style="height: 50px;">
+                                        <label for="floatingInput"><sup>*</sup> Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="floatingInput"
+                                            placeholder="Phone Number" style="height: 50px;">
+                                        <label for="floatingInput"><sup>*</sup> Phone Number</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="floatingInput"
+                                            placeholder="name@example.com" style="height: 50px;">
+                                        <label for="floatingInput"><sup>*</sup> Email
+                                            address</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Message" id="floatingTextarea1"
+                                            style="height: 100px"></textarea>
+                                        <label for="floatingTextarea1">Message</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 contact-us-btn">
+                                    <button class="btn" type="submit">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+
+                <figure class="conact-us-map">
+                    <img src="assets/images/contact-us-map.jpg" width="631" height="735" alt="map" class="w-100">
+                </figure>
             </section>
         </article>
     </main>
 
-    <footer class="footer">
+    <footer class="footer bg-black">
         <div class="container">
             <div class="footer-content">
-                <p class="mb-0">©2017. All Rights Reserved.</p>
+                <div class="footer-top">
+                    <h1 class="mb-0 text-center">BARBERS</h1>
 
-                <a href="#">Terms and Conditions.</a>
+                    <ul class="navbar-list mb-0">
+                        <li class="navbar-item">
+                            <a href="#home" class="navbar-link">
+                                Home
+                            </a>
+                        </li>
+
+                        <li class="navbar-item">
+                            <a href="#about-us" class="navbar-link">
+                                About Us
+                            </a>
+                        </li>
+
+                        <li class="navbar-item">
+                            <a href="#services" class="navbar-link">
+                                Services
+                            </a>
+                        </li>
+
+                        <li class="navbar-item">
+                            <a href="#testimonials" class="navbar-link">
+                                Testimonials
+                            </a>
+                        </li>
+
+                        <li class="navbar-item">
+                            <a href="#our-team" class="navbar-link">
+                                Our Team
+                            </a>
+                        </li>
+
+                        <li class="navbar-item">
+                            <a href="#contact-us" class="navbar-link">
+                                Contact Us
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="footer-socials">
+                        <ul class="social-list mb-0">
+
+                            <li>
+                                <a href="#" class="social-link">
+                                    <ion-icon name="logo-facebook"></ion-icon>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#" class="social-link">
+                                    <ion-icon name="logo-twitter"></ion-icon>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#" class="social-link">
+                                    <ion-icon name="logo-linkedin"></ion-icon>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <h3 class="mb-0">BARBERS © 2018. All Rights Reserved.</h3>
+                </div>
             </div>
         </div>
     </footer>
+
+
 
     <!--  
         Bootstrap JS Link
@@ -166,14 +648,21 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-    <script>
-        const header = document.querySelector(".header");
+    <!-- 
+        Swiper JS Link
+    -->
 
-        window.addEventListener("scroll", function () {
-            header.classList[window.scrollY > 100 ? "add" : "remove"]("active");
-        });
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
-    </script>
+    <!-- 
+        Animate On Scroll JS Link
+    -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!--  
+        Custom JS
+    -->
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>
